@@ -1,14 +1,14 @@
 const gulp = require("gulp")
 const inlineCss = require("gulp-inline-css")
-const plumber = require("plumber")
+// const plumber = require("plumber")
 
-{src, dist} = gulp;
+const {src, dest} = gulp;
 
-function build(){
+async function build(){
 	src("*.html")
-	.pipe(plumber())
+	// .pipe(plumber())
 	.pipe(inlineCss())
-	dist("build")
+	.pipe(dest("build"))
 }
 
 exports.build = build;
